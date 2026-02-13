@@ -78,7 +78,7 @@ Scripts that need additional operations beyond the base set must:
 
 | Script         | Additional Operations | Why Needed                                     |
 | -------------- | --------------------- | ---------------------------------------------- |
-| `micrornn.py`  | `sigmoid()`           | GRU gating: `z_t = sigmoid(...)`               |
+| `04-micrornn.py`  | `sigmoid()`           | GRU gating: `z_t = sigmoid(...)`               |
 | `microlora.py` | (none beyond base)    | Uses base set                                  |
 | `microdpo.py`  | `log()`               | Log-probability ratios in DPO loss             |
 | `microppo.py`  | `log()`, `clip()`     | PPO ratio clipping, log-probs                  |
