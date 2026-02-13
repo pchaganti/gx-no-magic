@@ -20,23 +20,23 @@ Every `Value` class must support these operations:
 
 ### Arithmetic
 
-| Operation | Python Method | Notes |
-|---|---|---|
-| Addition | `__add__`, `__radd__` | `Value + Value`, `Value + float`, `float + Value` |
+| Operation      | Python Method         | Notes                                             |
+| -------------- | --------------------- | ------------------------------------------------- |
+| Addition       | `__add__`, `__radd__` | `Value + Value`, `Value + float`, `float + Value` |
 | Multiplication | `__mul__`, `__rmul__` | `Value * Value`, `Value * float`, `float * Value` |
-| Negation | `__neg__` | `-Value` (implemented as `self * -1`) |
-| Subtraction | `__sub__`, `__rsub__` | Via `__add__` and `__neg__` |
-| Division | `__truediv__` | Via `__mul__` and `__pow__(-1)` |
-| Power | `__pow__` | `Value ** int` or `Value ** float` |
+| Negation       | `__neg__`             | `-Value` (implemented as `self * -1`)             |
+| Subtraction    | `__sub__`, `__rsub__` | Via `__add__` and `__neg__`                       |
+| Division       | `__truediv__`         | Via `__mul__` and `__pow__(-1)`                   |
+| Power          | `__pow__`             | `Value ** int` or `Value ** float`                |
 
 ### Activations
 
-| Function | Signature | Backward |
-|---|---|---|
-| `tanh()` | `self.tanh() -> Value` | `grad * (1 - out**2)` |
-| `exp()` | `self.exp() -> Value` | `grad * out` |
-| `relu()` | `self.relu() -> Value` | `grad * (1 if self.data > 0 else 0)` |
-| `log()` | `self.log() -> Value` | `grad / self.data` (clamp `self.data >= 1e-10`) |
+| Function | Signature              | Backward                                        |
+| -------- | ---------------------- | ----------------------------------------------- |
+| `tanh()` | `self.tanh() -> Value` | `grad * (1 - out**2)`                           |
+| `exp()`  | `self.exp() -> Value`  | `grad * out`                                    |
+| `relu()` | `self.relu() -> Value` | `grad * (1 if self.data > 0 else 0)`            |
+| `log()`  | `self.log() -> Value`  | `grad / self.data` (clamp `self.data >= 1e-10`) |
 
 ### Backward Pass
 
@@ -76,13 +76,13 @@ Scripts that need additional operations beyond the base set must:
 
 ### Known Extensions by Script
 
-| Script | Additional Operations | Why Needed |
-|---|---|---|
-| `micrornn.py` | `sigmoid()` | GRU gating: `z_t = sigmoid(...)` |
-| `microlora.py` | (none beyond base) | Uses base set |
-| `microdpo.py` | `log()` | Log-probability ratios in DPO loss |
-| `microppo.py` | `log()`, `clip()` | PPO ratio clipping, log-probs |
-| `micromoe.py` | (router only) | Router uses base set; experts are plain floats |
+| Script         | Additional Operations | Why Needed                                     |
+| -------------- | --------------------- | ---------------------------------------------- |
+| `micrornn.py`  | `sigmoid()`           | GRU gating: `z_t = sigmoid(...)`               |
+| `microlora.py` | (none beyond base)    | Uses base set                                  |
+| `microdpo.py`  | `log()`               | Log-probability ratios in DPO loss             |
+| `microppo.py`  | `log()`, `clip()`     | PPO ratio clipping, log-probs                  |
+| `micromoe.py`  | (router only)         | Router uses base set; experts are plain floats |
 
 ### Autograd Callout Pattern
 
