@@ -2,6 +2,8 @@
 
 **Because `model.fit()` isn't an explanation.**
 
+![no-magic](./assets/banner.png)
+
 ---
 
 ## What This Is

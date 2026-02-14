@@ -4,12 +4,12 @@ Methods for steering, fine-tuning, and aligning models after pretraining. These 
 
 ## Scripts
 
-| Script | Algorithm | Status |
-|---|---|---|
-| `microlora.py` | Low-Rank Adaptation (LoRA) fine-tuning | Complete |
-| `microdpo.py` | Direct Preference Optimization | Complete |
-| `microppo.py` | Proximal Policy Optimization for RLHF (hybrid autograd) | Complete |
-| `micromoe.py` | Mixture of Experts with sparse routing (hybrid autograd) | Complete |
+| Script         | Algorithm                                                | Status   |
+| -------------- | -------------------------------------------------------- | -------- |
+| `microlora.py` | Low-Rank Adaptation (LoRA) fine-tuning                   | Complete |
+| `microdpo.py`  | Direct Preference Optimization                           | Complete |
+| `microppo.py`  | Proximal Policy Optimization for RLHF (hybrid autograd)  | Complete |
+| `micromoe.py`  | Mixture of Experts with sparse routing (hybrid autograd) | Complete |
 
 ### Hybrid Autograd Scripts
 
@@ -22,13 +22,13 @@ See `docs/autograd-interface.md` for the canonical interface and `docs/implement
 
 ## Future Candidates
 
-| Algorithm | What It Would Teach | Notes |
-|---|---|---|
-| **REINFORCE** | Vanilla policy gradient with baseline | Simpler RL alternative, foundation for understanding PPO |
+| Algorithm                    | What It Would Teach                                 | Notes                                                             |
+| ---------------------------- | --------------------------------------------------- | ----------------------------------------------------------------- |
+| **REINFORCE**                | Vanilla policy gradient with baseline               | Simpler RL alternative, foundation for understanding PPO          |
 | **Dropout / Regularization** | Why random neuron deactivation prevents overfitting | Could cover dropout, weight decay, and early stopping in one file |
-| **Batch Normalization** | Internal covariate shift, running statistics | The technique that made deep networks trainable |
-| **Learning Rate Scheduling** | Warmup, cosine decay, step decay | How schedule choice affects convergence |
-| **Knowledge Distillation** | Training small models to mimic large ones | Compression via soft targets |
+| **Batch Normalization**      | Internal covariate shift, running statistics        | The technique that made deep networks trainable                   |
+| **Learning Rate Scheduling** | Warmup, cosine decay, step decay                    | How schedule choice affects convergence                           |
+| **Knowledge Distillation**   | Training small models to mimic large ones           | Compression via soft targets                                      |
 
 ## Learning Path
 
