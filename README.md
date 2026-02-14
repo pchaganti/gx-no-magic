@@ -1,11 +1,15 @@
 ![no-magic](./assets/banner.png)
 
+---
+
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/github/license/Mathews-Tom/no-magic?style=flat-square)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen?style=flat-square)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/Mathews-Tom/no-magic?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/Mathews-Tom/no-magic?style=flat-square)
+
+---
 
 # no-magic
 
@@ -105,6 +109,14 @@ This covers 9 of 16 scripts. Each tier's README has the full algorithm list for 
 This project is directly inspired by [Andrej Karpathy's](https://github.com/karpathy) extraordinary work on minimal implementations — particularly [micrograd](https://github.com/karpathy/micrograd), [makemore](https://github.com/karpathy/makemore), and the `microgpt.py` script that demonstrated the entire GPT algorithm in a single dependency-free Python file.
 
 Karpathy proved that there's enormous demand for "the algorithm, naked." `no-magic` extends that philosophy across the full landscape of modern AI/ML.
+
+## How This Was Built
+
+In the spirit of transparency: the code in this repository was co-authored with Claude (Anthropic). I designed the project — which algorithms to include, the three-tier structure, the constraint system, the learning path, and how each script should be organized — then directed the implementations and verified that every script trains and infers correctly end-to-end on CPU.
+
+I'm not claiming to have hand-typed 16 algorithms from scratch. The value of this project is in the curation, the architectural decisions, and the fact that every script works as a self-contained, runnable learning resource. The line-by-line code generation was collaborative.
+
+This is how I build in 2026. I'd rather be upfront about it.
 
 ## Contributing
 
