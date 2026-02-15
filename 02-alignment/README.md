@@ -4,17 +4,19 @@ Methods for steering, fine-tuning, and aligning models after pretraining. These 
 
 ## Scripts
 
-| Script              | Algorithm                                                             | Run Time | Status   |
-| ------------------- | --------------------------------------------------------------------- | -------- | -------- |
-| `microbatchnorm.py` | Batch Normalization — internal covariate shift and running statistics | 0m 34s   | Complete |
-| `microdpo.py`       | Direct Preference Optimization                                        | 2m 42s   | Complete |
-| `microdropout.py`   | Dropout, weight decay, and early stopping as regularization           | 3m 21s   | Complete |
-| `microgrpo.py`      | Group Relative Policy Optimization (DeepSeek's RLHF simplification)   | 0m 23s   | Complete |
-| `microlora.py`      | Low-Rank Adaptation (LoRA) fine-tuning                                | 2m 32s   | Complete |
-| `micromoe.py`       | Mixture of Experts with sparse routing (hybrid autograd)              | 0m 06s   | Complete |
-| `microppo.py`       | Proximal Policy Optimization for RLHF (hybrid autograd)               | 0m 34s   | Complete |
-| `microqlora.py`     | QLoRA — fine-tuning 4-bit quantized models with LoRA adapters         | 2m 27s   | Complete |
-| `microreinforce.py` | REINFORCE — vanilla policy gradient with baseline                     | 5m 39s   | Complete |
+Measured on Apple M-series, Python 3.12. Times are wall-clock.
+
+| Script              | Algorithm                                                             | Time   | Status |
+| ------------------- | --------------------------------------------------------------------- | ------ | ------ |
+| `microbatchnorm.py` | Batch Normalization — internal covariate shift and running statistics | 0m 34s | Pass   |
+| `microdpo.py`       | Direct Preference Optimization                                        | 2m 42s | Pass   |
+| `microdropout.py`   | Dropout, weight decay, and early stopping as regularization           | 3m 21s | Pass   |
+| `microgrpo.py`      | Group Relative Policy Optimization (DeepSeek's RLHF simplification)   | 0m 23s | Pass   |
+| `microlora.py`      | Low-Rank Adaptation (LoRA) fine-tuning                                | 2m 32s | Pass   |
+| `micromoe.py`       | Mixture of Experts with sparse routing (hybrid autograd)              | 0m 06s | Pass   |
+| `microppo.py`       | Proximal Policy Optimization for RLHF (hybrid autograd)               | 0m 34s | Pass   |
+| `microqlora.py`     | QLoRA — fine-tuning 4-bit quantized models with LoRA adapters         | 2m 27s | Pass   |
+| `microreinforce.py` | REINFORCE — vanilla policy gradient with baseline                     | 5m 39s | Pass   |
 
 ### Hybrid Autograd Scripts
 
@@ -24,22 +26,6 @@ Methods for steering, fine-tuning, and aligning models after pretraining. These 
 - **micromoe:** Router uses scalar autograd. Expert MLPs use plain float arrays — the routing decision is the novel mechanism, not the expert forward pass.
 
 See `docs/autograd-interface.md` for the canonical interface and `docs/implementation.md` for per-script details.
-
-## Test Results
-
-Measured on Apple M-series, Python 3.12. Times are wall-clock.
-
-| Script              | Status | Time   |
-| ------------------- | ------ | ------ |
-| `microbatchnorm.py` | Pass   | 0m 34s |
-| `microdpo.py`       | Pass   | 2m 42s |
-| `microdropout.py`   | Pass   | 3m 21s |
-| `microgrpo.py`      | Pass   | 0m 23s |
-| `microlora.py`      | Pass   | 2m 32s |
-| `micromoe.py`       | Pass   | 0m 06s |
-| `microppo.py`       | Pass   | 0m 34s |
-| `microqlora.py`     | Pass   | 2m 27s |
-| `microreinforce.py` | Pass   | 5m 39s |
 
 ## Future Candidates
 
